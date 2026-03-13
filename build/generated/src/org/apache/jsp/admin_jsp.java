@@ -1,0 +1,273 @@
+package org.apache.jsp;
+
+import javax.servlet.*;
+import javax.servlet.http.*;
+import javax.servlet.jsp.*;
+
+public final class admin_jsp extends org.apache.jasper.runtime.HttpJspBase
+    implements org.apache.jasper.runtime.JspSourceDependent {
+
+  private static final JspFactory _jspxFactory = JspFactory.getDefaultFactory();
+
+  private static java.util.List<String> _jspx_dependants;
+
+  private org.glassfish.jsp.api.ResourceInjector _jspx_resourceInjector;
+
+  public java.util.List<String> getDependants() {
+    return _jspx_dependants;
+  }
+
+  public void _jspService(HttpServletRequest request, HttpServletResponse response)
+        throws java.io.IOException, ServletException {
+
+    PageContext pageContext = null;
+    HttpSession session = null;
+    ServletContext application = null;
+    ServletConfig config = null;
+    JspWriter out = null;
+    Object page = this;
+    JspWriter _jspx_out = null;
+    PageContext _jspx_page_context = null;
+
+    try {
+      response.setContentType("text/html");
+      pageContext = _jspxFactory.getPageContext(this, request, response,
+      			null, true, 8192, true);
+      _jspx_page_context = pageContext;
+      application = pageContext.getServletContext();
+      config = pageContext.getServletConfig();
+      session = pageContext.getSession();
+      out = pageContext.getOut();
+      _jspx_out = out;
+      _jspx_resourceInjector = (org.glassfish.jsp.api.ResourceInjector) application.getAttribute("com.sun.appserv.jsp.resource.injector");
+
+      out.write("\n");
+      out.write("\n");
+      out.write("<!DOCTYPE html>\n");
+      out.write("<html >\n");
+      out.write("  <head>\n");
+      out.write("    <meta charset=\"UTF-8\">\n");
+      out.write("    <title>login form</title>\n");
+      out.write("    \n");
+      out.write("    \n");
+      out.write("    <link rel=\"stylesheet\" href=\"css/reset_1.css\">\n");
+      out.write("\n");
+      out.write("    \n");
+      out.write("        <style>\n");
+      out.write("      /* NOTE: The styles were added inline because Prefixfree needs access to your styles and they must be inlined if they are on local disk! */\n");
+      out.write("      * {\n");
+      out.write("  -moz-box-sizing: border-box;\n");
+      out.write("  box-sizing: border-box;\n");
+      out.write("}\n");
+      out.write("\n");
+      out.write("body {\n");
+      out.write("  background-image: url(\"images/img13.jpg\");\n");
+      out.write("  font: 100%/1 \"Helvetica Neue\", Arial, sans-serif;\n");
+      out.write("}\n");
+      out.write("\n");
+      out.write(".login {\n");
+      out.write("  position: absolute;\n");
+      out.write("  top: 50%;\n");
+      out.write("  left: 50%;\n");
+      out.write("  margin: -10rem 0 0 -10rem;\n");
+      out.write("  width: 20rem;\n");
+      out.write("  height: 20rem;\n");
+      out.write("  padding: 20px;\n");
+      out.write("  background: #fff;\n");
+      out.write("  border-radius: 5px;\n");
+      out.write("  overflow: hidden;\n");
+      out.write("}\n");
+      out.write(".login:hover > .login-header, .login.focused > .login-header {\n");
+      out.write("  width: 2rem;\n");
+      out.write("}\n");
+      out.write(".login:hover > .login-header > .text, .login.focused > .login-header > .text {\n");
+      out.write("  font-size: 1rem;\n");
+      out.write("  transform: rotate(-90deg);\n");
+      out.write("}\n");
+      out.write(".login.loading > .login-header {\n");
+      out.write("  width: 20rem;\n");
+      out.write("}\n");
+      out.write(".login.loading > .login-header > .text {\n");
+      out.write("  display: none;\n");
+      out.write("}\n");
+      out.write(".login.loading > .login-header > .loader {\n");
+      out.write("  display: block;\n");
+      out.write("}\n");
+      out.write("\n");
+      out.write(".login-header {\n");
+      out.write("  position: absolute;\n");
+      out.write("  left: 0;\n");
+      out.write("  top: 0;\n");
+      out.write("  z-index: 1;\n");
+      out.write("  width: 20rem;\n");
+      out.write("  height: 20rem;\n");
+      out.write("  background: orange;\n");
+      out.write("  transition: width 0.5s ease-in-out;\n");
+      out.write("}\n");
+      out.write(".login-header > .text {\n");
+      out.write("  display: block;\n");
+      out.write("  width: 100%;\n");
+      out.write("  height: 100%;\n");
+      out.write("  font-size: 5rem;\n");
+      out.write("  text-align: center;\n");
+      out.write("  line-height: 20rem;\n");
+      out.write("  color: #fff;\n");
+      out.write("  transition: all 0.5s ease-in-out;\n");
+      out.write("}\n");
+      out.write(".login-header > .loader {\n");
+      out.write("  display: none;\n");
+      out.write("  position: absolute;\n");
+      out.write("  left: 5rem;\n");
+      out.write("  top: 5rem;\n");
+      out.write("  width: 10rem;\n");
+      out.write("  height: 10rem;\n");
+      out.write("  border: 2px solid #fff;\n");
+      out.write("  border-radius: 50%;\n");
+      out.write("  animation: loading 2s linear infinite;\n");
+      out.write("}\n");
+      out.write(".login-header > .loader:after {\n");
+      out.write("  content: \"\";\n");
+      out.write("  position: absolute;\n");
+      out.write("  left: 4.5rem;\n");
+      out.write("  top: -0.5rem;\n");
+      out.write("  width: 1rem;\n");
+      out.write("  height: 1rem;\n");
+      out.write("  background: #fff;\n");
+      out.write("  border-radius: 50%;\n");
+      out.write("  border-right: 2px solid orange;\n");
+      out.write("}\n");
+      out.write(".login-header > .loader:before {\n");
+      out.write("  content: \"\";\n");
+      out.write("  position: absolute;\n");
+      out.write("  left: 4rem;\n");
+      out.write("  top: -0.5rem;\n");
+      out.write("  width: 0;\n");
+      out.write("  height: 0;\n");
+      out.write("  border-right: 1rem solid #fff;\n");
+      out.write("  border-top: 0.5rem solid transparent;\n");
+      out.write("  border-bottom: 0.5rem solid transparent;\n");
+      out.write("}\n");
+      out.write("\n");
+      out.write("@keyframes loading {\n");
+      out.write("  50% {\n");
+      out.write("    opacity: 0.5;\n");
+      out.write("  }\n");
+      out.write("  100% {\n");
+      out.write("    transform: rotate(360deg);\n");
+      out.write("  }\n");
+      out.write("}\n");
+      out.write(".login-form {\n");
+      out.write("  margin: 0 0 0 2rem;\n");
+      out.write("  padding: 0.5rem;\n");
+      out.write("}\n");
+      out.write("\n");
+      out.write(".login-input {\n");
+      out.write("  display: block;\n");
+      out.write("  width: 100%;\n");
+      out.write("  font-size: 2rem;\n");
+      out.write("  padding: 0.5rem 1rem;\n");
+      out.write("  box-shadow: none;\n");
+      out.write("  border-color: #ccc;\n");
+      out.write("  border-width: 0 0 2px 0;\n");
+      out.write("}\n");
+      out.write(".login-input + .login-input {\n");
+      out.write("  margin: 10px 0 0;\n");
+      out.write("}\n");
+      out.write(".login-input:focus {\n");
+      out.write("  outline: none;\n");
+      out.write("  border-bottom-color: orange;\n");
+      out.write("}\n");
+      out.write("\n");
+      out.write(".login-btn {\n");
+      out.write("  position: absolute;\n");
+      out.write("  right: 1rem;\n");
+      out.write("  bottom: 1rem;\n");
+      out.write("  width: 5rem;\n");
+      out.write("  height: 5rem;\n");
+      out.write("  border: none;\n");
+      out.write("  background: orange;\n");
+      out.write("  border-radius: 50%;\n");
+      out.write("  font-size: 0;\n");
+      out.write("  border: 0.6rem solid transparent;\n");
+      out.write("  transition: all 0.3s ease-in-out;\n");
+      out.write("}\n");
+      out.write(".login-btn:after {\n");
+      out.write("  content: \"\";\n");
+      out.write("  position: absolute;\n");
+      out.write("  left: 1rem;\n");
+      out.write("  top: 0.8rem;\n");
+      out.write("  width: 0;\n");
+      out.write("  height: 0;\n");
+      out.write("  border-left: 2.4rem solid #fff;\n");
+      out.write("  border-top: 1.2rem solid transparent;\n");
+      out.write("  border-bottom: 1.2rem solid transparent;\n");
+      out.write("  transition: border 0.3s ease-in-out 0s;\n");
+      out.write("}\n");
+      out.write(".login-btn:hover, .login-btn:focus, .login-btn:active {\n");
+      out.write("  background: #fff;\n");
+      out.write("  border-color: orange;\n");
+      out.write("  outline: none;\n");
+      out.write("}\n");
+      out.write(".login-btn:hover:after, .login-btn:focus:after, .login-btn:active:after {\n");
+      out.write("  border-left-color: orange;\n");
+      out.write("}\n");
+      out.write("\n");
+      out.write("    </style>\n");
+      out.write("\n");
+      out.write("    \n");
+      out.write("        <script src=\"js/prefixfree.min.js\"></script>\n");
+      out.write("\n");
+      out.write("    \n");
+      out.write("  </head>\n");
+      out.write("  <script>\n");
+      out.write("  function validatte()\n");
+      out.write("  {\n");
+      out.write("      var username=document.f1.username.value;\n");
+      out.write("      var password=document.f1.password.value;\n");
+      out.write("      \n");
+      out.write("      if(username==\"\")\n");
+      out.write("          {\n");
+      out.write("              alert(\"Enter your username\");\n");
+      out.write("              return false;\n");
+      out.write("          }\n");
+      out.write("      else if(password==\"\")\n");
+      out.write("          {\n");
+      out.write("              alert(\"Enter your password\");\n");
+      out.write("              return false;\n");
+      out.write("          }\n");
+      out.write("          return true;\n");
+      out.write("  }\n");
+      out.write("  </script>\n");
+      out.write("  <body>\n");
+      out.write("\n");
+      out.write("    \n");
+      out.write("<div class=\"login\">\n");
+      out.write("  <header class=\"login-header\"><span class=\"text\">ADMIN</span><span class=\"loader\"></span></header>\n");
+      out.write("  <form class=\"login-form\" name=\"f1\" action=\"AdminServlet\" method=\"post\" onsubmit=\"return validatte()\">\n");
+      out.write("    <input type=\"text\" placeholder=\"Username\" class=\"login-input\" name=\"username\"/>\n");
+      out.write("    <input type=\"password\" placeholder=\"Password\" class=\"login-input\" name=\"password\"/>\n");
+      out.write("    <button type=\"submit\" class=\"login-btn\">login</button>\n");
+      out.write("  </form>\n");
+      out.write("</div>\n");
+      out.write("    <script src='http://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js'></script>\n");
+      out.write("\n");
+      out.write("        <script src=\"js/index_5.js\"></script>\n");
+      out.write("\n");
+      out.write("    \n");
+      out.write("    \n");
+      out.write("    \n");
+      out.write("  </body>\n");
+      out.write("</html>\n");
+    } catch (Throwable t) {
+      if (!(t instanceof SkipPageException)){
+        out = _jspx_out;
+        if (out != null && out.getBufferSize() != 0)
+          out.clearBuffer();
+        if (_jspx_page_context != null) _jspx_page_context.handlePageException(t);
+        else throw new ServletException(t);
+      }
+    } finally {
+      _jspxFactory.releasePageContext(_jspx_page_context);
+    }
+  }
+}
